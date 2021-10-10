@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.ImageView
+import android.widget.TextView
 import com.jayshe.pizzaorderapp_20211010.R
 import com.jayshe.pizzaorderapp_20211010.datas.StoreData
 
@@ -25,8 +27,13 @@ class PizzaStoreAdapter(
 
         val row = tempRow!!
 
-        return row
+        val data =  mList[position]
 
+        val logoImg = row.findViewById<ImageView>( R.id.logoImg )
+        val storeNameTxt = row.findViewById<TextView>( R.id.storeNameTxt )
+
+        storeNameTxt.text = data.name
+        return row
     }
 
 }
